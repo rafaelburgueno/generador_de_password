@@ -1,7 +1,11 @@
 //alert("bienvenido/a a password generator!!!!!!")
 //var simbolos = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~"];
-var simbolos = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
-var suplantador = ["aA^4", "bB38", "cC<(", "dD>)", "eE3", "fF+#", "gG69", "hH#", "iI1¡!", "jJ¡7", "kK#", "lL1|", "mMwW", "nNzZ", "oO0Q", "pPq?", "qQ?", "rRk2", "sS5", "tT7", "uU", "vV", "wWmM", "xX*+", "yY7", "zZ2N", " -_."];
+const simbolos = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+const suplantador = ["aA^4", "bB38", "cC<(", "dD>)", "eE3", "fF+#", "gG69", "hH#", "iI1¡!", "jJ¡7", "kK#", "lL1|", "mMwW", "nNzZ", "oO0Q", "pPq?", "qQ?", "rRk2", "sS5", "tT7", "uU", "vV", "wWmM", "xX*+", "yY7", "zZ2N", " -_."];
+
+var salida = document.getElementById("salida")
+salida.style.display="none";
+
 
 var salida = "";
 
@@ -22,10 +26,11 @@ function tomaEntrada() {
     //var salida = "escribiste: " + entrada.value + " eso es la salida"
 
 
-    document.getElementById("salidap").innerHTML = salida;
-    //document.getElementById("entrada1").innerHTML = entrada;
+    //document.getElementById("salidap").innerHTML = salida;
+    document.getElementById("entrada").value = salida;
     //alert("el input dice: funca");
-    console.log(entrada.value);
+    console.log('La entrada es: ',entrada.value);
+    console.log('La salida es: ', salida);
     salida = "";
 }
 
@@ -46,7 +51,8 @@ function suplantar() {
     }
 
 
-    document.getElementById("salidap").innerHTML = salida;
+    document.getElementById("salida").value = salida;
+    document.getElementById("salida").style.display = 'inline-block';
     console.log("la salida es: " + salida);
     salida = "";
 }
